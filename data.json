@@ -1,0 +1,72 @@
+{
+    "sessions": {
+        "Kassia_session": {
+            "host": "Kassia",
+            "votes": {
+                "Kassia": {
+                    "Said": {
+                        "food": 1,
+                        "creativity": 1,
+                        "activity": 1,
+                        "global": 5
+                    },
+                    "Alex": {
+                        "food": 1,
+                        "creativity": 1,
+                        "activity": 5,
+                        "global": 5
+                    },
+                    "David": {
+                        "food": 1,
+                        "creativity": 1,
+                        "activity": 1,
+                        "global": 1
+                    },
+                    "Pap\u00e9": {
+                        "food": 1,
+                        "creativity": 1,
+                        "activity": 1,
+                        "global": 1
+                    }
+                }
+            },
+            "voters": [],
+            "stage": "results",
+            "scores": {
+                "detailed_votes": {
+                    "Kassia": [
+                        {
+                            "voter": "Said",
+                            "food": 1,
+                            "creativity": 1,
+                            "activity": 1,
+                            "global": 6.0
+                        },
+                        {
+                            "voter": "Alex",
+                            "food": 1,
+                            "creativity": 1,
+                            "activity": 5,
+                            "global": 6.0
+                        },
+                        {
+                            "voter": "David",
+                            "food": 1,
+                            "creativity": 1,
+                            "activity": 1,
+                            "global": 1.2
+                        },
+                        {
+                            "voter": "Pap\u00e9",
+                            "food": 1,
+                            "creativity": 1,
+                            "activity": 1,
+                            "global": 1.2
+                        }
+                    ]
+                },
+                "Kassia": 7.6
+            }
+        }
+    }
+}

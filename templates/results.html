@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Challenge - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dinner Challenge - Results for {{ host }}</h1>
+        <div class="results-table">
+            <h2>Final Score</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Host</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ host }}</td>
+                        <td>{{ scores[host] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Detailed Votes</h2>
+        {% for host, votes in detailed_votes.items() %}
+            <h3>{{ host }}</h3>
+            <div class="detailed-votes">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Voter</th>
+                            <th>Food</th>
+                            <th>Creativity</th>
+                            <th>Activity</th>
+                            <th>Global</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vote in votes %}
+                            {% if vote != 'opt_out' %}
+                                <tr>
+                                    <td>{{ vote.voter }}</td>
+                                    <td>{{ vote.food }}</td>
+                                    <td>{{ vote.creativity }}</td>
+                                    <td>{{ vote.activity }}</td>
+                                    <td>{{ vote.global }}</td>
+                                </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endfor %}
+        
+
+        <form method="POST">
+            <button type="submit" name="reveal_names" class="button reveal-button">
+                {% if reveal_names %}
+                    Hide Names
+                {% else %}
+                    Reveal Names
+                {% endif %}
+            </button>
+        </form>
+
+        <form action="{{ url_for('index') }}" method="GET">
+          <button type="submit" class="button">New Session</button>
+        </form>
+    </div>
+</body>
+</html>

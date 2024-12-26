@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Challenge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dinner Challenge</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="host">Host:</label>
+                <select name="host" id="host" required>
+                    <option value="" disabled selected>Select Host</option>
+                    {% for p in participants %}
+                    <option value="{{ p }}">{{ p }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="button">Start Session</button>
+        </form>
+    </div>
+</body>
+</html>
